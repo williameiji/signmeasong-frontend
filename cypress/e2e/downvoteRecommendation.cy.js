@@ -17,16 +17,16 @@ describe("Test post /recommendation/upvote", () => {
 		cy.wait("@findRecommendations");
 
 		cy.intercept("GET", "http://localhost:5000/recommendations").as(
-			"findRecommendationsUpvotes"
+			"findRecommendationsDownvotes"
 		);
 
-		cy.intercept("POST", "/recommendations/*/upvote").as("upvote");
-		cy.get('[data-cy="upvote"]').click();
-		cy.wait("@upvote").its("response.statusCode").should("eq", 200);
+		cy.intercept("POST", "/recommendations/*/downvote").as("downvote");
+		cy.get('[data-cy="downvote"]').click();
+		cy.wait("@downvote").its("response.statusCode").should("eq", 200);
 
-		cy.wait("@findRecommendationsUpvotes");
+		cy.wait("@findRecommendationsDownvotes");
 
 		cy.get('[data-cy="urlname"]').should("contain.text", recommendation.name);
-		cy.get('[data-cy="counter"]').should("contain.text", "1");
+		cy.get('[data-cy="counter"]').should("contain.text", "-1");
 	});
 });
