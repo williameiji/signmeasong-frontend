@@ -22,7 +22,7 @@ Sing me a song is an application for anonymous song recommendation. The more peo
 ## :gear: Functionalities
 
 - Add new songs
-- Reagir upvote or downvote
+- React upvote or downvote
 - Search more recommended
 - Receive a random song
 
