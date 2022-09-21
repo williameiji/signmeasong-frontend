@@ -4,8 +4,8 @@ beforeEach(() => {
 	cy.truncate();
 });
 
-describe("Test post /recommendation/upvote", () => {
-	it("test upvote on recommendation", async () => {
+describe("Test post /recommendation/downvote", () => {
+	it("test downvote on recommendation", async () => {
 		const recommendation = await recommendationFactory();
 
 		cy.intercept("GET", "http://localhost:5000/recommendations").as(
