@@ -26,6 +26,9 @@ Cypress.Commands.add("truncate", () => {
 	cy.request("POST", "http://localhost:5000/e2e/cleardb", {});
 });
 
+Cypress.Commands.add("createTop", () => {
+	cy.request("POST", "http://localhost:5000/e2e/createtop", {});
+});
 //
 //
 // -- This is a child command --
